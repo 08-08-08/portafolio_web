@@ -1,0 +1,574 @@
+---
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout title="Eliecer Fitoria | Software Developer" description="Portafolio profesional de Eliecer Fitoria, Bachiller en Informática Empresarial de la UCR.">
+  
+  <header class="fixed top-0 z-50 w-full border-b border-white/5 bg-black/60 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between p-5">
+      <a href="#home" class="text-2xl font-black tracking-tighter text-white">
+        EF<span class="text-purple-500">.</span>
+      </a>
+
+      <div class="hidden md:flex gap-10 text-xs uppercase tracking-[0.2em] font-medium text-slate-400">
+        <a data-key="nav.about" href="#aboutMe" class="hover:text-purple-400 transition-colors">Acerca de mí</a>
+        <a data-key="nav.stack" href="#stack" class="hover:text-purple-400 transition-colors">Tecnologías</a>
+        <a data-key="nav.projects" href="#proyectos" class="hover:text-purple-400 transition-colors">Proyectos</a>
+        <a data-key="nav.experience" href="#experiencia" class="hover:text-purple-400 transition-colors">Experiencia</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button 
+          id="language-toggle" 
+          class="relative flex items-center bg-white/5 border border-white/10 p-1 rounded-full w-20 h-9 cursor-pointer hover:border-purple-500/50 transition-all duration-300 group"
+        >
+          <div id="lang-indicator" class="absolute left-1 w-8 h-6.5 bg-purple-600 rounded-full transition-transform duration-300 shadow-[0_0_10px_rgba(168,85,247,0.4)]"></div>
+          <span class="relative z-10 w-1/2 text-[10px] font-black text-center text-white transition-colors">ES</span>
+          <span class="relative z-10 w-1/2 text-[10px] font-black text-center text-slate-400 group-hover:text-slate-200 transition-colors">EN</span>
+        </button>
+
+        <div class="relative hidden sm:inline-block text-left" id="dropdown-wrapper">
+          <button 
+            id="btn-dropdown"
+            type="button"
+            class="text-xs font-bold uppercase tracking-widest border border-purple-500/50 bg-purple-500/10 px-6 py-2 rounded-full text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.15)] flex items-center gap-2 group"
+          >
+            <span data-key="nav.contact">Contacto</span>
+            <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300" id="icon-arrow"></i>
+          </button>
+
+          <div id="menu-dropdown" class="absolute right-0 mt-3 w-52 rounded-2xl border border-white/10 bg-[#0a0a0a]/95 backdrop-blur-xl p-2 shadow-2xl opacity-0 scale-95 pointer-events-none transition-all duration-300 z-100">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fitoriaperezeliecer@gmail.com" target="_blank" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-300 hover:bg-purple-500/10 hover:text-white transition-colors">
+              <i class="fa-solid fa-envelope text-purple-400"></i>
+              <span data-key="nav.email">Enviar Email</span>
+            </a>
+            <a href="https://wa.me/50663332151" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-300 hover:bg-green-500/10 hover:text-white transition-colors">
+              <i class="fa-brands fa-whatsapp text-green-400"></i>
+              <span data-key="nav.whatsapp">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        
+      </div>
+    </nav>
+
+  </header>
+
+  <main class="bg-[#050505] text-white">
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 blur-[120px] rounded-full"></div>
+      
+      <div class="relative z-10 mx-auto max-w-6xl px-6 w-full flex flex-col md:flex-row items-center gap-12 lg:gap-20 pt-20">
+        <div class="flex-1 space-y-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span data-key="hero.status" class="text-[10px] font-bold uppercase tracking-widest text-slate-300">disponibilidad Inmediata</span>
+          </div>
+
+          <h1 class="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter leading-tight md:leading-none">
+            <span data-key="hero.title1">Software</span> <br /> 
+            <span data-key="hero.title2" class="text-transparent bg-clip-text bg-linear-to-r from-slate-200 via-purple-400 to-slate-500">
+              Developer
+            </span>
+          </h1>
+
+          <div class="space-y-8">
+            <p data-key="hero.desc" class="text-slate-400 max-w-md text-lg font-light leading-relaxed">
+              Desarrollador de software enfocado en la arquitectura y construcción de aplicaciones multiplataforma. Me apasiona traducir retos de negocio en código eficiente.
+            </p>
+
+            <div class="flex flex-wrap gap-5">
+              <a href="#proyectos" class="group relative px-8 py-4 bg-white text-black font-bold rounded-xl overflow-hidden transition-all shadow-lg shadow-white/5 flex-1 sm:flex-none text-center">
+                <span data-key="hero.btn.view" class="relative z-10 text-sm uppercase tracking-bold">Ver Proyectos</span>
+                <div class="absolute inset-0 bg-purple-700 translate-y-full group-hover:translate-y-[0%] transition-transform duration-300"></div>
+              </a>
+              <a data-key="hero.btn.cv" href="/cv/CV_Eliecer_Fitoria.pdf" download class="px-8 py-4 border border-white/10 rounded-xl text-sm uppercase tracking-widest font-bold hover:bg-white/5 transition-all text-white flex-1 sm:flex-none text-center">
+                Descargar CV
+              </a>
+            </div>
+
+            <div class="pt-6 border-t border-white/5 flex flex-col gap-6">
+              <div class="flex flex-wrap gap-x-10 gap-y-4">
+                <div class="space-y-1">
+                  <span data-key="hero.title3" class="text-[10px] uppercase tracking-[0.2em] text-purple-500 font-bold block">Correo</span>
+                  <span class="text-sm font-mono text-slate-300 select-all hover:text-white transition-colors cursor-text break-all">fitoriaperezeliecer@gmail.com</span>
+                </div>
+                <div class="space-y-1">
+                  <span data-key="hero.title4" class="text-[10px] uppercase tracking-[0.2em] text-purple-500 font-bold block">Teléfono</span>
+                  <span class="text-sm font-mono text-slate-300 select-all hover:text-white transition-colors cursor-text">+506 6333 2151</span>
+                </div>
+              </div>
+
+              <div class="flex gap-6 text-2xl text-slate-500">
+                <a href="https://linkedin.com/in/eliecer-fitoria-p%C3%A9rez-9764aa2a7/" target="_blank" class="hover:text-blue-500 transition-all duration-300 hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/08-08-08" target="_blank" class="hover:text-white transition-colors hover:scale-110"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group max-w-sm w-full mx-auto md:mx-0">
+          <div class="absolute -inset-1 bg-linear-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+          <img
+            src="/img/fotoCV.jpg"
+            alt="Eliecer Fitoria"
+            class="relative w-full aspect-4/5 object-cover rounded-2xl grayscale contrast-125 hover:grayscale-0 transition-all duration-700 shadow-2xl"
+          />
+        </div>
+      </div>
+    </section>            
+
+    <section id="aboutMe" class="py-24 px-6 max-w-5xl mx-auto text-center border-t border-white/5">
+      <h2 data-key="about.subtitle" class="text-xs uppercase tracking-[0.5em] text-purple-500 mb-8 font-bold">Perfil Profesional</h2>
+      
+      <div class="space-y-6">
+        <p data-key="about.p1" class="text-xl md:text-2xl font-light leading-relaxed text-slate-300 text-pretty">
+          "Bachiller en Informática Empresarial de la <span class="text-white font-medium">Universidad de Costa Rica</span>, mi propósito es transformar desafíos técnicos en herramientas digitales que realmente faciliten la operación de un negocio."
+        </p>
+        
+        <p data-key="about.p2" class="text-base md:text-lg font-light leading-relaxed text-slate-400 max-w-4xl mx-auto text-pretty">
+          Me considero un desarrollador versátil con una base sólida en el desarrollo integral de aplicaciones. Disfruto trabajar en todo el ciclo de vida de un proyecto, desde la lógica del servidor con <span class="text-purple-400">.NET Core, Java y Laravel</span>, hasta la creación de interfaces dinámicas y funcionales con <span class="text-purple-400">React, Vue.js y Flutter</span>. Mi experiencia con <span class="text-white">SQL Server y MySQL</span> me permite asegurar que la información fluya de manera eficiente y segura.
+        </p>
+
+        <p data-key="about.p3" class="text-base md:text-lg font-light leading-relaxed text-slate-400 max-w-4xl mx-auto">
+          Valoro profundamente el trabajo bajo metodologías <span class="text-white font-medium">SCRUM</span>, ya que creo que la comunicación y el orden son las claves para entregar productos de calidad. Estoy en constante aprendizaje para que cada solución que desarrolle cumpla con las mejores prácticas y los objetivos del equipo.
+        </p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="text-center">
+          <span class="block text-4xl font-black text-white tracking-tighter">UCR</span>
+          <span data-key="about.stat1" class="text-[10px] text-purple-500 uppercase tracking-[0.3em] font-bold">Formación Académica</span>
+        </div>
+        <div class="text-center border-t sm:border-t-0 sm:border-l border-white/10 pt-8 sm:pt-0 sm:pl-8">
+          <span class="block text-4xl font-black text-white tracking-tighter">A2-B1</span>
+          <span data-key="about.stat2" class="text-[10px] text-purple-500 uppercase tracking-[0.3em] font-bold">Nivel de Inglés</span>
+        </div>
+        <div class="text-center border-t sm:border-t-0 sm:border-l border-white/10 pt-8 sm:pt-0 sm:pl-8">
+          <span class="block text-4xl font-black text-white tracking-tighter">FULL</span>
+          <span data-key="about.stat3" class="text-[10px] text-purple-500 uppercase tracking-[0.3em] font-bold">Stack Developer</span>
+        </div>
+      </div>
+    </section> 
+
+    <section id="stack" class="py-20 px-6 max-w-6xl mx-auto">
+      <h2 data-key="stack.subtitle" class="text-xs uppercase tracking-[0.5em] text-purple-500 font-bold mb-4">Especialización</h2>
+      <h3 data-key="stack.title" class="text-4xl font-bold mb-10 tracking-tighter text-white">Stack Tecnológico<span class="text-purple-500">.</span></h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="p-8 bg-white/2 border border-white/5 rounded-3xl hover:border-purple-500/30 transition-all duration-500">
+          <i class="fa-solid fa-server text-3xl text-purple-500 mb-6"></i>
+          <h4 data-key="stack.cat1" class="text-xl font-bold mb-4 text-white">Backend & Lenguajes</h4>
+          <div class="flex flex-wrap gap-2">
+            {['Java', '.NET', '.NET Core', 'PHP', 'Laravel', 'Node.js', 'Python', 'TypeScript'].map(tech => (
+              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] text-slate-400 font-medium hover:text-white hover:bg-purple-500/20 transition-colors">{tech}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="p-8 bg-white/2 border border-white/5 rounded-3xl hover:border-blue-500/30 transition-all duration-500">
+          <i class="fa-solid fa-code text-3xl text-blue-500 mb-6"></i>
+          <h4 data-key="stack.cat2" class="text-xl font-bold mb-4 text-white">Frontend</h4>
+          <div class="flex flex-wrap gap-2">
+            {['React', 'Angular', 'Vue.js', 'Astro', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind', 'Bootstrap'].map(tech => (
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] text-slate-400 font-medium hover:text-white hover:bg-blue-500/20 transition-colors">{tech}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="p-8 bg-white/2 border border-white/5 rounded-3xl hover:border-cyan-500/30 transition-all duration-500">
+          <i class="fa-solid fa-mobile-screen-button text-3xl text-cyan-500 mb-6"></i>
+          <h4 data-key="stack.cat3" class="text-xl font-bold mb-4 text-white">Mobile</h4>
+          <div class="flex flex-wrap gap-2">
+            {['Flutter', 'React Native'].map(tech => (
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] text-slate-400 font-medium hover:text-white hover:bg-cyan-500/20 transition-colors">{tech}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="p-8 bg-white/2 border border-white/5 rounded-3xl hover:border-emerald-500/30 transition-all duration-500">
+          <i class="fa-solid fa-database text-3xl text-emerald-500 mb-6"></i>
+          <h4 data-key="stack.cat4" class="text-xl font-bold mb-4 text-white">Data & Integraciones</h4>
+          <div class="flex flex-wrap gap-2">
+            {['MySQL', 'SQL Server', 'PostgreSQL', 'NoSQL', 'APIs REST', 'Stored Procedures', 'Triggers'].map(tech => (
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] text-slate-400 font-medium hover:text-white hover:bg-emerald-500/20 transition-colors">{tech}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="p-8 bg-white/2 border border-white/5 rounded-3xl hover:border-orange-500/30 transition-all duration-500">
+          <i class="fa-solid fa-toolbox text-3xl text-orange-500 mb-6"></i>
+          <h4 data-key="stack.cat5" class="text-xl font-bold mb-4 text-white">Herramientas & DevOps</h4>
+          <div class="flex flex-wrap gap-2">
+            {['GitHub', 'Postman', 'Azure DevOps', 'Android Studio', 'VirtualBox'].map(tech => (
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] text-slate-400 font-medium hover:text-white hover:bg-orange-500/20 transition-colors">{tech}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="p-8 bg-white/2 border border-white/5 rounded-3xl hover:border-red-500/30 transition-all duration-500">
+          <i class="fa-solid fa-diagram-project text-3xl text-red-500 mb-6"></i>
+          <h4 data-key="stack.cat6" class="text-xl font-bold mb-4 text-white">Metodologías</h4>
+          <div class="flex flex-wrap gap-2">
+            <span data-key="stack.scrum" class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] text-slate-400 font-medium hover:text-white hover:bg-red-500/20 transition-colors">SCRUM</span>
+            <span data-key="stack.items" class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] text-slate-400 font-medium hover:text-white hover:bg-red-500/20 transition-colors">Gestión de ítems</span>
+            <span data-key="stack.version" class="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] text-slate-400 font-medium hover:text-white hover:bg-red-500/20 transition-colors">Control de versiones</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+    <div class="relative w-full py-6 overflow-hidden border-y border-white/5 bg-white/2 backdrop-blur-md flex flex-col justify-center">
+        <div class="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-[#050505] to-transparent z-10"></div>
+        <div class="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-[#050505] to-transparent z-10"></div>
+
+        <div class="flex marquee-container">
+            <div class="flex items-center gap-20 marquee-content">
+                <i class="fa-brands fa-java text-3xl text-slate-500 hover:text-orange-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-laravel text-3xl text-slate-500 hover:text-red-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-php text-3xl text-slate-500 hover:text-indigo-400 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-node-js text-3xl text-slate-500 hover:text-green-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-python text-3xl text-slate-500 hover:text-yellow-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-react text-3xl text-slate-500 hover:text-cyan-400 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-angular text-3xl text-slate-500 hover:text-red-600 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-vuejs text-3xl text-slate-500 hover:text-emerald-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-js text-3xl text-slate-500 hover:text-yellow-400 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-bootstrap text-3xl text-slate-500 hover:text-purple-600 transition-all duration-300 hover:scale-110"></i> 
+                <i class="fa-brands fa-github text-3xl text-slate-500 hover:text-white transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-solid fa-database text-3xl text-slate-500 hover:text-blue-400 transition-all duration-300 hover:scale-110"></i>
+            </div>
+            <div class="flex items-center gap-20 marquee-content" aria-hidden="true">
+                <i class="fa-brands fa-java text-3xl text-slate-500 hover:text-orange-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-laravel text-3xl text-slate-500 hover:text-red-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-php text-3xl text-slate-500 hover:text-indigo-400 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-node-js text-3xl text-slate-500 hover:text-green-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-python text-3xl text-slate-500 hover:text-yellow-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-react text-3xl text-slate-500 hover:text-cyan-400 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-angular text-3xl text-slate-500 hover:text-red-600 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-vuejs text-3xl text-slate-500 hover:text-emerald-500 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-js text-3xl text-slate-500 hover:text-yellow-400 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-bootstrap text-3xl text-slate-500 hover:text-purple-600 transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-brands fa-github text-3xl text-slate-500 hover:text-white transition-all duration-300 hover:scale-110"></i>
+                <i class="fa-solid fa-database text-3xl text-slate-500 hover:text-blue-400 transition-all duration-300 hover:scale-110"></i>
+            </div>
+        </div>
+    </div>
+
+    <section id="proyectos" class="py-32 px-6 max-w-6xl mx-auto">
+      <h2 data-key="projects.subtitle" class="text-xs uppercase tracking-[0.5em] text-purple-500 font-bold mb-4">Portafolio</h2>
+      <h3 data-key="projects.title" class="text-4xl font-bold mb-16 tracking-tighter text-white">Proyectos Destacados<span class="text-purple-500">.</span></h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <div class="group relative overflow-hidden rounded-3xl bg-white/3 border border-white/10 p-8 hover:bg-white/6 transition-all">
+              <div class="flex justify-between items-start mb-6">
+                  <i class="fa-solid fa-network-wired text-4xl text-indigo-400"></i>
+                  <span class="text-[10px] font-bold py-1 px-3 border border-indigo-500/30 rounded-full text-indigo-300 uppercase">Backend / API</span>
+              </div>
+              <h4 data-key="projects.p1.title" class="text-2xl font-bold mb-3 text-white">Orquestador de Servicios</h4>
+              <p data-key="projects.p1.desc" class="text-slate-400 text-sm leading-relaxed mb-6">
+                  Desarrollo de una capa intermedia para centralizar la comunicación entre módulos internos, optimizando el rendimiento y la escalabilidad del sistema.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                  <span class="text-[10px] text-slate-500 font-mono">C#</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#.NET Core</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#APIs REST</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#SQL Server</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#Azure DevOps</span>
+              </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl bg-white/3 border border-white/10 p-8 hover:bg-white/6 transition-all">
+              <div class="flex justify-between items-start mb-6">
+                  <i class="fa-solid fa-boxes-stacked text-4xl text-blue-400"></i>
+                  <span data-key="projects.p2.movtitle" class="text-[10px] font-bold py-1 px-3 border border-blue-500/30 rounded-full text-blue-300 uppercase">Mobile / Logística</span>
+              </div>
+              <h4 data-key="projects.p2.title" class="text-2xl font-bold mb-3 text-white">App de Logística Handheld</h4>
+              <p data-key="projects.p2.desc" class="text-slate-400 text-sm leading-relaxed mb-6">
+                  Aplicación móvil para dispositivos handheld enfocada en la movilización y validación de cajas, mejorando la precisión en procesos logísticos internos.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                  <span class="text-[10px] text-slate-500 font-mono">#Flutter</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#Dart</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#Handheld</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#SCRUM</span>
+              </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl bg-white/3 border border-white/10 p-8 hover:bg-white/6 transition-all">
+              <div class="flex justify-between items-start mb-6">
+                  <i class="fa-solid fa-truck-fast text-4xl text-purple-400"></i>
+                  <span data-key="projects.p3.flititle" class="text-[10px] font-bold py-1 px-3 border border-purple-500/30 rounded-full text-purple-300 uppercase">Web / Mobile</span>
+              </div>
+              <h4 data-key="projects.p3.title" class="text-2xl font-bold mb-3 text-white">Plataforma Flitzy</h4>
+              <p data-key="projects.p3.desc" class="text-slate-400 text-sm leading-relaxed mb-6">
+                  Sistema de delivery integral con módulos especializados para repartidores, locales comerciales y usuarios finales.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                  <span class="text-[10px] text-slate-500 font-mono">#Laravel</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#Vue.js</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#SQL Server</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#AWS</span>
+              </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl bg-white/3 border border-white/10 p-8 hover:bg-white/6 transition-all">
+              <div class="flex justify-between items-start mb-6">
+                  <i class="fa-solid fa-calendar-check text-4xl text-cyan-400"></i>
+                  <span data-key="projects.p4.deltitle" class="text-[10px] font-bold py-1 px-3 border border-cyan-500/30 rounded-full text-cyan-300 uppercase">Integraciones</span>
+              </div>
+              <h4 data-key="projects.p4.title" class="text-2xl font-bold mb-3 text-white">Sistema de Reservaciones</h4>
+              <p data-key="projects.p4.desc" class="text-slate-400 text-sm leading-relaxed mb-6">
+                  Gestión dinámica de disponibilidad con integración de Google Sign-In y automatización de notificaciones por correo.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                  <span class="text-[10px] text-slate-500 font-mono">#Laravel</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#Bootstrap</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#GoogleAPI</span>
+              </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl bg-white/3 border border-white/10 p-8 hover:bg-white/6 transition-all">
+              <div class="flex justify-between items-start mb-6">
+                  <i class="fa-solid fa-shirt text-4xl text-emerald-400"></i>
+                  <span data-key="projects.p5.estitle" class="text-[10px] font-bold py-1 px-3 border border-emerald-500/30 rounded-full text-emerald-300 uppercase">Escritorio</span>
+              </div> 
+              <h4 data-key="projects.p5.title" class="text-2xl font-bold mb-3 text-white">Gestión de Inventario</h4>
+              <p data-key="projects.p5.desc" class="text-slate-400 text-sm leading-relaxed mb-6">
+                  Software robusto de escritorio para control de ventas y stock en tiendas de ropa, desarrollado con enfoque en rapidez operativa.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                  <span class="text-[10px] text-slate-500 font-mono">#Java</span>
+                  <span class="text-[10px] text-slate-500 font-mono">#MySQL</span>
+              </div>
+          </div>
+
+      </div>
+    </section>  
+
+    <section id="experiencia" class="py-32 bg-white/1">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+          <div class="md:sticky md:top-32">
+            <h2 data-key="exp.subtitle" class="text-xs uppercase tracking-[0.5em] text-purple-500 font-bold mb-4">
+              Trayectoria
+            </h2>
+            <h3 data-key="exp.title" class="text-4xl font-bold tracking-tighter text-white">
+              Experiencia <br/> Profesional<span class="text-purple-500">.</span>
+            </h3>
+          </div>
+
+          <div class="flex-1 space-y-16">
+            <div class="group relative pl-8 border-l border-white/10">
+              <div class="absolute w-3 h-3 bg-purple-500 rounded-full -left-[6.5px] top-2 shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
+              <span class="text-xs font-mono text-slate-500 uppercase tracking-widest">Jul 2025 — Dic 2025</span>
+              <h4 data-key="exp.1.role" class="text-2xl font-bold mt-2 group-hover:text-purple-400 transition-colors text-white">
+                Desarrollador / Integraciones Empresariales
+              </h4>
+              <p data-key="exp.1.place" class="text-lg text-slate-300 font-medium mb-4 italic">
+                Grupo Colono (Práctica Profesional)
+              </p>
+              <ul class="text-slate-400 space-y-3 font-light text-sm max-w-xl">
+                <li data-key="exp.1.i1">• Desarrollo y optimización de flujos de comunicación...</li>
+                <li data-key="exp.1.i2">• Creación de aplicaciones móviles en Flutter...</li>
+                <li data-key="exp.1.i3">• Diseño de lógica de negocio robusta...</li>
+                <li data-key="exp.1.i4">• Trabajo colaborativo bajo metodología SCRUM...</li>
+              </ul>
+            </div>
+
+            <div class="group relative pl-8 border-l border-white/10">
+              <div class="absolute w-3 h-3 bg-slate-500 rounded-full -left-[6.5px] top-2 transition-colors group-hover:bg-blue-400"></div>
+              <span data-key="exp.2.label" class="text-xs font-mono text-slate-500 uppercase tracking-widest">Asistencia Universitaria</span>
+              <h4 data-key="exp.2.role" class="text-2xl font-bold mt-2 group-hover:text-blue-400 transition-colors text-white">
+                Asistente de Programación
+              </h4>
+              <p class="text-lg text-slate-300 font-medium mb-4 italic">Universidad de Costa Rica</p>
+              <ul class="text-slate-400 space-y-3 font-light text-sm max-w-xl">
+                <li data-key="exp.2.i1">• Revisión técnica de proyectos de programación...</li>
+                <li data-key="exp.2.i2">• Apoyo en la resolución de algoritmos...</li>
+              </ul>
+            </div>
+
+            <div class="group relative pl-8 border-l border-white/10">
+              <div class="absolute w-3 h-3 bg-slate-500 rounded-full -left-[6.5px] top-2 transition-colors group-hover:bg-cyan-400"></div>
+              <span data-key="exp.3.label" class="text-xs font-mono text-slate-500 uppercase tracking-widest">Soporte Técnico & Gestión</span>
+              <h4 data-key="exp.3.role" class="text-2xl font-bold mt-2 group-hover:text-cyan-400 transition-colors text-white">
+                Asistente Administrativo y de Laboratorio
+              </h4>
+              <p class="text-lg text-slate-300 font-medium mb-4 italic">Universidad de Costa Rica</p>
+              <ul class="text-slate-400 space-y-3 font-light text-sm max-w-xl">
+                <li data-key="exp.3.i1">• Gestión de inventario tecnológico...</li>
+                <li data-key="exp.3.i2">• Actualización de software...</li>
+                <li data-key="exp.3.i3">• Soporte técnico e instalaciones...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+
+    <button 
+      id="back-to-top"
+      class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur-md transition-all duration-500 opacity-0 translate-y-10 pointer-events-none hover:bg-purple-500 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] group"
+      aria-label="Volver al inicio">
+      <i class="fa-solid fa-chevron-up transition-transform group-hover:-translate-y-1"></i>
+    </button>
+
+    <footer class="py-12 border-t border-white/5 bg-[#050505] text-center">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-xl font-black tracking-tighter text-white mb-4">
+          EF<span class="text-purple-500">.</span>
+        </div>
+        
+        <p class="text-slate-500 text-[11px] uppercase tracking-[0.3em] font-medium">
+          &copy; 2026 <span class="text-slate-300">Eliecer Fitoria</span>. 
+        </p>
+        
+        <p class="mt-4 text-[10px] text-slate-600 font-mono">
+          Hecho con <span class="text-purple-400">Astro</span> & <span class="text-blue-400">Tailwind CSS</span>
+        </p>
+      </div>
+    </footer>
+    
+  </main>
+</Layout>
+
+<style is:global>
+
+  
+  html {
+    scroll-behavior: smooth;
+    background: #050505;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #252525;
+  }
+  .marquee-container {
+    display: flex;
+    width: fit-content;
+  }
+
+  .marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100%;
+    justify-content: space-around;
+    padding-left: 5rem; 
+    animation: scroll 40s linear infinite;
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+  }
+</style>
+
+<script>
+  import { ui, type Language } from "../i18n";
+
+  // --- 1. LÓGICA DE TRADUCCIÓN (i18n) ---
+  let currentLang: Language = "es";
+  
+  const langBtn = document.getElementById("language-toggle");
+  const langIndicator = document.getElementById("lang-indicator");
+  const langTexts = langBtn?.querySelectorAll('span');
+
+  function updateContent(lang: Language) {
+    const elements = document.querySelectorAll("[data-key]");
+    
+    elements.forEach((el) => {
+      const key = el.getAttribute("data-key") as keyof (typeof ui)["es"];
+      // @ts-ignore
+      const translation = ui[lang][key];
+
+      if (translation) {
+        if (translation.includes("<span") || translation.includes("<br")) {
+          el.innerHTML = translation;
+        } else {
+          el.textContent = translation;
+        }
+      }
+    });
+
+    document.documentElement.lang = lang;
+
+    if (langIndicator && langTexts) {
+      if (lang === "en") {
+        langIndicator.style.transform = "translateX(36px)";
+        langTexts[0].classList.replace('text-white', 'text-slate-400');
+        langTexts[1].classList.replace('text-slate-400', 'text-white');
+      } else {
+        langIndicator.style.transform = "translateX(0px)";
+        langTexts[1].classList.replace('text-white', 'text-slate-400');
+        langTexts[0].classList.replace('text-slate-400', 'text-white');
+      }
+    }
+  }
+
+  langBtn?.addEventListener("click", () => {
+    currentLang = currentLang === "es" ? "en" : "es";
+    updateContent(currentLang);
+  });
+
+
+  // --- 3. LÓGICA DEL DROPDOWN DE CONTACTO ---
+  const btnDropdown = document.getElementById('btn-dropdown');
+  const menuDropdown = document.getElementById('menu-dropdown');
+  const iconArrow = document.getElementById('icon-arrow');
+
+  btnDropdown?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuDropdown?.classList.toggle('opacity-0');
+    menuDropdown?.classList.toggle('scale-95');
+    menuDropdown?.classList.toggle('pointer-events-none');
+    iconArrow?.classList.toggle('rotate-180');
+  });
+
+  document.addEventListener('click', () => {
+    menuDropdown?.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+    iconArrow?.classList.remove('rotate-180');
+  });
+
+
+  // --- 4. LÓGICA DEL BOTÓN VOLVER ARRIBA ---
+  const backToTop = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop?.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+    } else {
+      backToTop?.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+    }
+  });
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
